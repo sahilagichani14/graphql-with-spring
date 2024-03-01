@@ -1,0 +1,70 @@
+# query{
+#   customers{
+#     id
+#     firstName
+#     lastName
+#   }
+# }
+
+# query{
+#   customerById(id:2){
+#     id
+#     city
+#     zipCode
+#   }
+# }
+
+# returns null as doesn't exists
+# query{
+#   customerByEmail(email:"abcd@gmail.com"){
+#     id
+#     city
+#     zipCode
+#   }
+# }
+
+# mutation{
+#   addCustomer(input:{
+#     firstName: "sahil"
+#     lastName: "agichani"
+#     email: "sagichani@gmail.com"
+#     phoneNumber: "123456789"
+#     address: "Germany"
+#     city: "Paderborn"
+#     state: "NR" # failed for >= 3 aphabets
+#     zipCode: "33098"
+#   })
+#   {
+#     id
+#     firstName
+#     email
+#     state
+#   }
+# }
+
+# query{
+#   orders{
+#     id
+#     customer{
+#       id
+#       firstName
+#       email
+#     }
+#     salesperson{
+#       id
+#       lastName
+#       email
+#     }
+#     orderLines{
+#       product{
+#         name
+#         variety
+#         size
+#         price
+#       }
+#       quantity
+#     }
+#   }
+# }
+
+
